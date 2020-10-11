@@ -1,19 +1,18 @@
-public class bell implements Runnable{
+public class Bell implements Runnable {
     private Semaforo sem1;
     private Semaforo sem2;
     private String name;
 
-    public bell(Semaforo s1, Semaforo s2, String name){
-        sem1 = s1;
-        sem2 = s2;
-        this.name=name;
+    public Bell(Semaforo s1, Semaforo s2, String name) {
+        this.sem1 = s1;
+        this.sem2 = s2;
+        this.name = name;
     }
 
     @Override
-    public void run(){  
+    public void run() {  
 
-        while(true)
-        {
+        while(true) {
             sem1.P();
             System.out.println(name);
             try {

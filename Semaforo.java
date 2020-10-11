@@ -1,22 +1,21 @@
 public class Semaforo {
-    
     int valore;
     
-    public Semaforo(int v){
-    valore=v;
+    public Semaforo(int v) {
+        valore = v;
     }
     
-    synchronized public void P(){
-        while (valore==0){
-        try{
-            wait();
+    synchronized public void P() {
+        while (valore == 0) {
+            try {
+                wait();
             }
-        catch (InterruptedException e){}
+            catch (InterruptedException e) {}
         }
         valore--;
     }
     
-    synchronized public void V(){
+    synchronized public void V() {
         valore++;
         notify();
     }
